@@ -20,7 +20,7 @@ const getPeople = teamName => {
       return []
     }
 
-    return team.people
+    return team.surfers
   })
 }
 

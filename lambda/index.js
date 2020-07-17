@@ -1,6 +1,7 @@
 const Alexa = require('ask-sdk-core')
 const _ = require('lodash')
 const teams = require('./teams')
+const addTeamsAPLDirective = require('./apl/addTeamsAPLDirective')
 
 const LaunchRequestHandler = {
   canHandle (handlerInput) {
@@ -69,11 +70,13 @@ const RichiestaTeamIntentHandler = {
     callDirectiveService(handlerInput, teamName)
 
     const people = await teams.getPeople(teamName)
-    const speakOutput = `Il team ${teamName} è composto da ${people.join(', ')}. Vuoi conoscere la composizione di qualche altro team?`
-    return handlerInput.responseBuilder
+    const speakOutput = `Il team ${teamName} è composto da ${people.map(p => p.name).join(', ')}. Vuoi conoscere la composizione di qualche altro team?`
+
+    const response = handlerInput.responseBuilder
       .speak(speakOutput)
       .reprompt('vuoi conoscere la composizione di qualche altro team?')
-      .getResponse()
+
+    return addTeamsAPLDirective(handlerInput, response, teamName, people).getResponse()
   }
 }
 const HelpIntentHandler = {
