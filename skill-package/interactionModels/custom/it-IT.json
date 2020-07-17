@@ -1,0 +1,316 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "flowing",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "RichiestaTeamIntent",
+                    "slots": [
+                        {
+                            "name": "Team",
+                            "type": "TeamName",
+                            "samples": [
+                                "del team di {Team}",
+                                "di {Team}",
+                                "{Team}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Sì",
+                        "Sì di {Team}",
+                        "Sì del team {Team}",
+                        "Da chi è composto il team {Team}",
+                        "{Team}",
+                        "Chi lavora su {Team}",
+                        "Qual è il team di {Team} "
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "TeamName",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Add Value"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Arca"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "AWS"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Bakeca"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Benelli Armi"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Blubai"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Bucci"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CariCare"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Carimali SITO"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Casavo"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Comunicazione & Mkt"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CREDEM"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "credimi"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Dedagroup"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "DIS"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Doit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Dondup"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Fiaso"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Flowing Sito"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Giuffré"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Harmony"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Il Giornale Wall"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Il Giornale Insideover"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Inter"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Jazzy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "LeadsBridge"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "List"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Mobika"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Monrif"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "MyPersonalGym"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Oltretata"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Prometeia"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Prysmian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ristoranti.it"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "SailSquare"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "SCM"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Scouting"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Sinapsi"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Soisy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "TeamSystem"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Technacy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Tozzigreen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Tuotempo"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Valentino"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Wishraiser"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "RichiestaTeamIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "Team",
+                            "type": "TeamName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1207838317376.1241295325596"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1207838317376.1241295325596",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Di quale team vuoi conoscere i componenti?"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "flowing-skill",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "ask deploy --profile alexalab"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "^14.3.4"
+  }
+}
