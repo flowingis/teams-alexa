@@ -20,6 +20,13 @@
                     "samples": []
                 },
                 {
+                    "name":"CazzataIntent",
+                    "samples": [
+                        "Dimmi una cazzata",
+                        "ho voglia di una cazzata"
+                    ]
+                },
+                {
                     "name": "RichiestaTeamIntent",
                     "slots": [
                         {

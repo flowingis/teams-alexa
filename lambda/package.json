@@ -13,6 +13,7 @@
     "ask-sdk-model": "^1.18.0",
     "aws-sdk": "^2.326.0",
     "lodash": "^4.17.19",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "twit": "^2.2.11"
   }
 }

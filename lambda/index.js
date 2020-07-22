@@ -1,6 +1,7 @@
 const Alexa = require('ask-sdk-core')
 const _ = require('lodash')
 const teams = require('./teams')
+const cazzatetxt = require('./cazzatetxt')
 const addTeamsAPLDirective = require('./apl/addTeamsAPLDirective')
 
 const LaunchRequestHandler = {
@@ -77,6 +78,20 @@ const RichiestaTeamIntentHandler = {
       .reprompt('vuoi conoscere la composizione di qualche altro team?')
 
     return addTeamsAPLDirective(handlerInput, response, teamName, people).getResponse()
+  }
+}
+
+const CazzataIntentHandler = {
+  canHandle (handlerInput) {
+    return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' &&
+    Alexa.getIntentName(handlerInput.requestEnvelope) === 'CazzataIntent'
+  },
+  async handle (handlerInput) {
+    const speakOutput = await cazzatetxt.randomCazzata()
+    return handlerInput.responseBuilder
+      .speak(speakOutput)
+      .reprompt('vuoi fare altro?')
+      .getResponse()
   }
 }
 const HelpIntentHandler = {
@@ -159,6 +174,7 @@ exports.handler = Alexa.SkillBuilders.custom()
   .addRequestHandlers(
     LaunchRequestHandler,
     RichiestaTeamIntentHandler,
+    CazzataIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler,
