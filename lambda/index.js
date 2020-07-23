@@ -3,6 +3,7 @@ const _ = require('lodash')
 const teams = require('./teams')
 const cazzatetxt = require('./cazzatetxt')
 const addTeamsAPLDirective = require('./apl/addTeamsAPLDirective')
+const addCazzataAPLDirective = require('./apl/addCazzataAPLDirective')
 
 const LaunchRequestHandler = {
   canHandle (handlerInput) {
@@ -88,10 +89,11 @@ const CazzataIntentHandler = {
   },
   async handle (handlerInput) {
     const speakOutput = await cazzatetxt.randomCazzata()
-    return handlerInput.responseBuilder
+    const response = handlerInput.responseBuilder
       .speak(speakOutput)
       .reprompt('vuoi fare altro?')
-      .getResponse()
+
+    return addCazzataAPLDirective(handlerInput, response, speakOutput).getResponse()
   }
 }
 const HelpIntentHandler = {
