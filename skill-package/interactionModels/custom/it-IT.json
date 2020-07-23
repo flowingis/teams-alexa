@@ -20,6 +20,13 @@
                     "samples": []
                 },
                 {
+                    "name":"CornamusaIntent",
+                    "samples": [
+                        "suona la cornamusa",
+                        "ma chi è fosco"
+                    ]
+                },
+                {
                     "name":"CazzataIntent",
                     "samples": [
                         "Dimmi una cazzata",

@@ -25,6 +25,9 @@
         },
         "interfaces": [
           {
+            "type": "VIDEO_APP"
+          },
+          {
             "type": "ALEXA_PRESENTATION_APL",
             "supportedViewports": [
               {

@@ -5,6 +5,16 @@ const cazzatetxt = require('./cazzatetxt')
 const addTeamsAPLDirective = require('./apl/addTeamsAPLDirective')
 const addCazzataAPLDirective = require('./apl/addCazzataAPLDirective')
 
+const supportsVideo = (handlerInput) => {
+  const supportedInterfaces = _.get(
+    handlerInput,
+    'requestEnvelope.context.System.device.supportedInterfaces',
+    {}
+  )
+
+  return Boolean(supportedInterfaces.VideoApp)
+}
+
 const LaunchRequestHandler = {
   canHandle (handlerInput) {
     return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest'
@@ -79,6 +89,26 @@ const RichiestaTeamIntentHandler = {
       .reprompt('vuoi conoscere la composizione di qualche altro team?')
 
     return addTeamsAPLDirective(handlerInput, response, teamName, people).getResponse()
+  }
+}
+
+const ShowVideoHandler = {
+  canHandle (handlerInput) {
+    return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' &&
+      Alexa.getIntentName(handlerInput.requestEnvelope) === 'CornamusaIntent'
+  },
+  handle (handlerInput) {
+    if (!supportsVideo(handlerInput)) {
+      return handlerInput.responseBuilder
+        .speak('Il tuo dispositivo non supporta i video')
+        .reprompt('vuoi fare altro?')
+        .getResponse()
+    }
+
+    return handlerInput.responseBuilder
+      .addVideoAppLaunchDirective('https://files-9xic1fugs.vercel.app', 'Revision Summer 2020', 'Fosco')
+      .withShouldEndSession(true)
+      .getResponse()
   }
 }
 
@@ -176,6 +206,7 @@ exports.handler = Alexa.SkillBuilders.custom()
   .addRequestHandlers(
     LaunchRequestHandler,
     RichiestaTeamIntentHandler,
+    ShowVideoHandler,
     CazzataIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
